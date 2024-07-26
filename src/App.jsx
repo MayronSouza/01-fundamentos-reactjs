@@ -29,9 +29,9 @@ const posts = [
       role: 'FullStack Developer'
     },
     content: [
-      { type: 'paragraph', content: 'Oi pessoal' },
-      { type: 'paragraph', content: 'Estou començando em um novo projeto, muito interessante em ReactJS' },
-      { type: 'link', content: 'mayron.dev/developer' },
+      { id: 1, type: 'paragraph', content: 'Oi pessoal' },
+      { id: 2, type: 'paragraph', content: 'Estou començando em um novo projeto, muito interessante em ReactJS' },
+      { id: 3, type: 'link', content: 'mayron.dev/developer' },
     ],
     publishedAt: new Date('2024-07-23 13:42:52')
   }
@@ -45,10 +45,10 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          {posts.map((post, index) => {
+          {posts.map(post => {
             return (
               <Post
-                key={index}
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
